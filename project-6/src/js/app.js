@@ -1,21 +1,21 @@
 App = {
     web3Provider: null,
     contracts: {},
-    emptyAddress: "0x0000000000000000000000000000000000000000",
+    emptyAddress: "0x7344010df5c1ca7e59072e1cdB1FB49C20F3BED0",
     sku: 0,
     upc: 0,
-    metamaskAccountID: "0x0000000000000000000000000000000000000000",
-    ownerID: "0x0000000000000000000000000000000000000000",
-    originFarmerID: "0x0000000000000000000000000000000000000000",
+    metamaskAccountID: "0x7344010df5c1ca7e59072e1cdB1FB49C20F3BED0",
+    ownerID: "0x3E8CA2Cd68c46a3335800BA4150Fd8301927b859",
+    originFarmerID: "0xaBaC161c54A1e1085f07bf3Fde03252bBBE4E4e0",
     originFarmName: null,
     originFarmInformation: null,
     originFarmLatitude: null,
     originFarmLongitude: null,
     productNotes: null,
     productPrice: 0,
-    distributorID: "0x0000000000000000000000000000000000000000",
-    retailerID: "0x0000000000000000000000000000000000000000",
-    consumerID: "0x0000000000000000000000000000000000000000",
+    distributorID: "0x40d635945ACb12E598D436525172d9Cc0b77009B",
+    retailerID: "0x8bd872e567164D877501c01f810AB192735D2779",
+    consumerID: "0x156B818B1B5A8EFC9F0A332A9472CDCb72d08Fb8",
 
     init: async function () {
         App.readForm();
@@ -74,7 +74,7 @@ App = {
         }
         // If no injected web3 instance is detected, fall back to Ganache
         else {
-            App.web3Provider = new Web3.providers.HttpProvider('http://localhost:7545');
+            App.web3Provider = new Web3.providers.HttpProvider('http://localhost:8546');
         }
 
         App.getMetaskAccountID();
@@ -245,6 +245,7 @@ App = {
     },
 
     shipItem: function (event) {
+        console.log("here ***************************** shipItem *********************************************")
         event.preventDefault();
         var processId = parseInt($(event.target).data('id'));
 
@@ -259,6 +260,7 @@ App = {
     },
 
     receiveItem: function (event) {
+        console.log("here ***************************** receiveItem *********************************************")
         event.preventDefault();
         var processId = parseInt($(event.target).data('id'));
 
